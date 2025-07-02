@@ -11,6 +11,7 @@
 	<groupId>com.customer</groupId>
 	<artifactId>ParentApplication</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
 	<name>ParentApplication</name>
 	<description>E-Commerce Application</description>
 	<url/>
@@ -20,6 +21,10 @@
 	<developers>
 		<developer/>
 	</developers>
+	<modules>
+		<module>customer-service</module>
+		<module>product-service</module>
+	</modules>
 	<scm>
 		<connection/>
 		<developerConnection/>
