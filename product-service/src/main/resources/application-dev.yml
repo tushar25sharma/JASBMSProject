@@ -1,0 +1,5 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://dev-db:5432/app_dev
+    username: dev_user
+    password: ${DEV_DB_PASSWORD}   # from env/secret

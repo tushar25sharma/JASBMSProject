@@ -2,6 +2,7 @@ package com.customer.service;
 
 import com.customer.entity.Customer;
 import com.customer.repository.CustomerRepository;
+import com.customer.repository.ProductClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -23,6 +24,9 @@ public class CustomerService {
         String productUrl = "http://localhost:8082/api/products/" + id;
         return restTemplate.getForObject(productUrl, String.class);
     }
+
+    @Autowired
+    private ProductClient productClient;
 
     public Customer createCustomer(Customer customer) {
         return customerRepository.save(customer);

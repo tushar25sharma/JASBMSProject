@@ -17,6 +17,10 @@ public class CustomerController {
     @Autowired
     private CustomerService customerService;
 
+//    @Autowired
+//    private ProductClient productClient;
+
+
     @PostMapping
     public ResponseEntity<Customer> create(@RequestBody Customer customer) {
         return ResponseEntity.ok(customerService.createCustomer(customer));
@@ -32,5 +36,11 @@ public class CustomerController {
         Optional<Customer> customer = customerService.getCustomerById(id);
         return customer.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
+
+
+//    @GetMapping("/product/{id}")
+//    public Product getProductFromProductService(@PathVariable Long id) {
+//        return productClient.getProductById(id);
+//    }
 
 }

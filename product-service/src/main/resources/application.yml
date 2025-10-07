@@ -13,5 +13,35 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.MySQL8Dialect
 
+#datasource:
+#  first:
+#    url: jdbc:postgresql://db1:5432/inventory
+#    username: inv_user
+#    password: ${INV_DB_PASSWORD}
+#  second:
+#    url: jdbc:mysql://db2:3306/billing
+#    username: bill_user
+#    password: ${BILL_DB_PASSWORD}
+
 server:
   port: 8082
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+#####if you want to use auto connection of same DB like dev/local/qa/prod/local use below
+#spring:
+#  jpa:
+#    hibernate.ddl-auto: validate
+#    show-sql: false
+#  datasource:
+#    hikari:
+#      maximum-pool-size: 10
+#
+## Default to local if nothing is set
+#spring:
+#  profiles:
+#    default: local

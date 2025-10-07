@@ -24,6 +24,8 @@
 	<modules>
 		<module>customer-service</module>
 		<module>product-service</module>
+        <module>api-gateway</module>
+		<module>discovery-server</module>
 	</modules>
 	<scm>
 		<connection/>
@@ -61,6 +63,17 @@
 		</dependency>
 	</dependencies>
 
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>2023.0.1</version> <!-- Compatible with Spring Boot 3.2+ -->
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 	<build>
 		<plugins>
 			<plugin>
